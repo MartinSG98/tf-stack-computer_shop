@@ -6,4 +6,7 @@ module "computer_shop" {
   project             = var.project
   cors_allow_origins  = var.cors_allow_origins
   github_deploy_repos = var.github_deploy_repos
+
+  api_throttle_rate_limit  = var.api_throttle_rate_limit
+  api_throttle_burst_limit = var.api_throttle_burst_limit
 }
