@@ -20,6 +20,15 @@ output "images_bucket_name" {
   value = module.computer_shop.images_bucket_name
 }
 
+output "frontend_bucket_name" {
+  value = module.computer_shop.frontend_bucket_name
+}
+
+output "frontend_url" {
+  description = "CloudFront URL of the frontend app."
+  value       = module.computer_shop.frontend_url
+}
+
 output "lambda_function_name" {
   value = module.computer_shop.lambda_function_name
 }
