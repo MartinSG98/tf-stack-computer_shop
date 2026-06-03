@@ -1,0 +1,5 @@
+# Copy to terraform.tfvars and adjust. terraform.tfvars is gitignored.
+
+project             = "computer-shop"
+cors_allow_origins  = "https://your-frontend.example.com"
+github_deploy_repos = ["MartinSG98/computer-shop-backend"]
