@@ -29,6 +29,15 @@ output "frontend_url" {
   value       = module.computer_shop.frontend_url
 }
 
+output "frontend_distribution_id" {
+  value = module.computer_shop.frontend_distribution_id
+}
+
+output "github_frontend_deploy_role_arn" {
+  description = "IAM role ARN for the frontend GitHub Actions to assume via OIDC."
+  value       = module.computer_shop.github_frontend_deploy_role_arn
+}
+
 output "lambda_function_name" {
   value = module.computer_shop.lambda_function_name
 }

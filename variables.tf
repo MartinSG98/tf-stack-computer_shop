@@ -17,9 +17,15 @@ variable "cors_allow_origins" {
 }
 
 variable "github_deploy_repos" {
-  description = "GitHub repos (owner/name) whose main branch may assume the deploy role."
+  description = "GitHub repos (owner/name) whose main branch may assume the backend deploy role."
   type        = list(string)
   default     = ["MartinSG98/computer-shop-backend"]
+}
+
+variable "github_frontend_repos" {
+  description = "GitHub repos (owner/name) whose main branch may assume the frontend deploy role."
+  type        = list(string)
+  default     = ["MartinSG98/computer_shop_ui"]
 }
 
 variable "api_throttle_rate_limit" {
