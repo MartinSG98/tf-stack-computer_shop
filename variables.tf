@@ -11,7 +11,7 @@ variable "project" {
 }
 
 variable "cors_allow_origins" {
-  description = "Comma-separated CORS origins for the API (e.g. https://shop.example.com)."
+  description = "EXTRA CORS origins beyond the frontend CloudFront URL (which is always allowed). E.g. a custom domain or http://localhost:5173."
   type        = string
   default     = ""
 }
