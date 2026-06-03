@@ -17,7 +17,7 @@ During development the module is referenced by **local path**
 To pin a released version, switch `main.tf` to the git source:
 
 ```hcl
-source = "git::https://github.com/MartinSG98/tf-module-computer_shop.git?ref=v0.1.0"
+source = "git::https://github.com/MartinSG98/tf-module-computer_shop.git?ref=v0.0.1"
 ```
 
 ## Usage
@@ -34,4 +34,6 @@ State is **local** (`terraform.tfstate`, gitignored).
 ## Outputs
 
 `api_url`, `cdn_base_url`, table names, `images_bucket_name`,
-`lambda_function_name`, `github_deploy_role_arn`.
+`frontend_bucket_name`, `frontend_url`, `frontend_distribution_id`,
+`lambda_function_name`, `github_deploy_role_arn`,
+`github_frontend_deploy_role_arn`.
