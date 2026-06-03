@@ -37,3 +37,11 @@ State is **local** (`terraform.tfstate`, gitignored).
 `frontend_bucket_name`, `frontend_url`, `frontend_distribution_id`,
 `lambda_function_name`, `github_deploy_role_arn`,
 `github_frontend_deploy_role_arn`.
+
+## Related
+
+Part of the Computer Shop project:
+
+- [computer-shop-backend](https://github.com/MartinSG98/computer-shop-backend) — FastAPI backend API
+- [computer_shop_ui](https://github.com/MartinSG98/computer_shop_ui) — React/Vite/Mantine frontend
+- [tf-module-computer_shop](https://github.com/MartinSG98/tf-module-computer_shop) — Terraform infrastructure module
