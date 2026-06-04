@@ -3,6 +3,11 @@ output "api_url" {
   value       = module.computer_shop.api_url
 }
 
+output "api_custom_domain_url" {
+  description = "Custom domain URL of the API (null if not configured)."
+  value       = module.computer_shop.api_custom_domain_url
+}
+
 output "cdn_base_url" {
   description = "CloudFront base URL for product images (use as CDN_BASE_URL)."
   value       = module.computer_shop.cdn_base_url
@@ -27,6 +32,11 @@ output "frontend_bucket_name" {
 output "frontend_url" {
   description = "CloudFront URL of the frontend app."
   value       = module.computer_shop.frontend_url
+}
+
+output "site_custom_domain_url" {
+  description = "Custom domain URL of the site (null if not configured)."
+  value       = module.computer_shop.site_custom_domain_url
 }
 
 output "frontend_distribution_id" {
