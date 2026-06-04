@@ -8,3 +8,11 @@ project = "computer-shop"
 
 github_deploy_repos   = ["MartinSG98/computer-shop-backend"]
 github_frontend_repos = ["MartinSG98/computer_shop_ui"]
+
+# Custom domains (optional). Register the domain first (Route 53 → Registered
+# domains) so its hosted zone exists; this stack only looks the zone up. Leave
+# any of these empty to keep using the default *.execute-api / *.cloudfront URLs.
+# The site domain's CORS origin is added automatically — no cors_allow_origins needed.
+# api_domain_name  = "api.msg-computers.com"
+# site_domain_name = "msg-computers.com"
+# hosted_zone_name = "msg-computers.com"

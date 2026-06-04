@@ -31,12 +31,40 @@ terraform apply
 
 State is **local** (`terraform.tfstate`, gitignored).
 
+The stack configures two AWS providers: the main one (`var.aws_region`) and an
+`us_east_1` alias passed to the module for the CloudFront site certificate.
+
+## Custom domains (optional)
+
+To serve the API and/or site from a custom domain:
+
+1. **Register the domain first** — Route 53 → Registered domains. This
+   auto-creates the public hosted zone; Terraform only looks it up (it can't
+   register domains). `.com` ≈ $15/yr + ~$6/yr hosted zone.
+2. Set the vars in `terraform.tfvars` (either/both):
+   ```hcl
+   api_domain_name  = "api.msg-computers.com"
+   site_domain_name = "msg-computers.com"
+   hosted_zone_name = "msg-computers.com"
+   ```
+3. `terraform apply`. Cert validation is automatic via DNS; the CloudFront
+   update takes a few minutes. The site origin is added to API CORS
+   automatically.
+4. Point the frontend at the API domain: set the `VITE_API_BASE_URL` repo
+   variable to `https://api.<domain>` and redeploy.
+
+Leave the vars empty to keep the default `*.execute-api` / `*.cloudfront.net`
+URLs (no domain resources created).
+
 ## Outputs
 
-`api_url`, `cdn_base_url`, table names, `images_bucket_name`,
-`frontend_bucket_name`, `frontend_url`, `frontend_distribution_id`,
-`lambda_function_name`, `github_deploy_role_arn`,
-`github_frontend_deploy_role_arn`.
+`api_url`, `api_custom_domain_url`, `cdn_base_url`, table names,
+`images_bucket_name`, `frontend_bucket_name`, `frontend_url`,
+`site_custom_domain_url`, `frontend_distribution_id`, `lambda_function_name`,
+`github_deploy_role_arn`, `github_frontend_deploy_role_arn`.
+
+(`api_custom_domain_url` / `site_custom_domain_url` are `null` until the
+domains are configured.)
 
 ## Related
 
