@@ -1,6 +1,6 @@
 module "computer_shop" {
   # Local path during development. Switch to a pinned version when releasing:
-  #   source = "git::https://github.com/MartinSG98/tf-module-computer_shop.git?ref=v0.2.0"
+  #   source = "git::https://github.com/MartinSG98/tf-module-computer_shop.git?ref=v0.3.0"
   source = "../tf-module-computer_shop"
 
   providers = {
@@ -12,6 +12,7 @@ module "computer_shop" {
   cors_allow_origins    = var.cors_allow_origins
   github_deploy_repos   = var.github_deploy_repos
   github_frontend_repos = var.github_frontend_repos
+  github_eval_repos     = var.github_eval_repos
 
   api_domain_name  = var.api_domain_name
   site_domain_name = var.site_domain_name

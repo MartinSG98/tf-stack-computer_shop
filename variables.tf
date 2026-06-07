@@ -28,6 +28,12 @@ variable "github_frontend_repos" {
   default     = ["MartinSG98/computer_shop_ui"]
 }
 
+variable "github_eval_repos" {
+  description = "GitHub repos (owner/name) whose main branch may assume the build-evaluator deploy role."
+  type        = list(string)
+  default     = ["MartinSG98/computer-shop-build-eval"]
+}
+
 variable "api_domain_name" {
   description = "Custom domain for the API, e.g. api.msg-computers.com. Leave empty to use only the default API Gateway invoke URL."
   type        = string
