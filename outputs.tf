@@ -56,3 +56,25 @@ output "github_deploy_role_arn" {
   description = "IAM role ARN for GitHub Actions to assume via OIDC."
   value       = module.computer_shop.github_deploy_role_arn
 }
+
+output "eval_lambda_function_name" {
+  value = module.computer_shop.eval_lambda_function_name
+}
+
+output "models_bucket_name" {
+  value = module.computer_shop.models_bucket_name
+}
+
+output "eval_model_key" {
+  value = module.computer_shop.eval_model_key
+}
+
+output "github_eval_deploy_role_arn" {
+  description = "IAM role ARN for the build-evaluator CI to assume via OIDC."
+  value       = module.computer_shop.github_eval_deploy_role_arn
+}
+
+output "eval_url" {
+  description = "Build-evaluator endpoint (POST)."
+  value       = module.computer_shop.eval_url
+}

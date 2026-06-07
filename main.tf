@@ -12,6 +12,7 @@ module "computer_shop" {
   cors_allow_origins    = var.cors_allow_origins
   github_deploy_repos   = var.github_deploy_repos
   github_frontend_repos = var.github_frontend_repos
+  github_eval_repos     = var.github_eval_repos
 
   api_domain_name  = var.api_domain_name
   site_domain_name = var.site_domain_name
