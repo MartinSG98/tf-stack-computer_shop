@@ -21,7 +21,7 @@ During development the module is referenced by **local path**
 To pin a released version, switch `main.tf` to the git source:
 
 ```hcl
-source = "git::https://github.com/MartinSG98/tf-module-computer_shop.git?ref=v0.3.5"
+source = "git::https://github.com/MartinSG98/tf-module-computer_shop.git?ref=v0.3.6"
 ```
 
 ## Usage
@@ -52,8 +52,8 @@ To serve the API and/or site from a custom domain:
    hosted_zone_name = "msg-computers.com"
    ```
 3. `terraform apply`. Cert validation is automatic via DNS; the CloudFront
-   update takes a few minutes. The site origin is added to API CORS
-   automatically.
+   update takes a few minutes. The site is served on both the apex and `www`,
+   and both origins are added to the API CORS list automatically.
 4. Point the frontend at the API domain: set the `VITE_API_BASE_URL` repo
    variable to `https://api.<domain>` and redeploy.
 
