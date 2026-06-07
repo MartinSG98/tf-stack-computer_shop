@@ -9,6 +9,10 @@ module. This is where you run `plan` / `apply`.
 - Terraform >= 1.5
 - AWS credentials for the deploy account (the **initial** apply bootstraps the
   GitHub OIDC role; afterwards CI deploys code keylessly).
+- **Bedrock model access** for the evaluator's suggestion model (default
+  `amazon.nova-lite-v1:0`) enabled in the deploy region (Bedrock console → Model
+  access). Without it the build score still works and suggestions just come back
+  empty.
 
 ## Module source
 
@@ -17,7 +21,7 @@ During development the module is referenced by **local path**
 To pin a released version, switch `main.tf` to the git source:
 
 ```hcl
-source = "git::https://github.com/MartinSG98/tf-module-computer_shop.git?ref=v0.0.1"
+source = "git::https://github.com/MartinSG98/tf-module-computer_shop.git?ref=v0.3.5"
 ```
 
 ## Usage
@@ -61,7 +65,9 @@ URLs (no domain resources created).
 `api_url`, `api_custom_domain_url`, `cdn_base_url`, table names,
 `images_bucket_name`, `frontend_bucket_name`, `frontend_url`,
 `site_custom_domain_url`, `frontend_distribution_id`, `lambda_function_name`,
-`github_deploy_role_arn`, `github_frontend_deploy_role_arn`.
+`github_deploy_role_arn`, `github_frontend_deploy_role_arn`,
+`eval_url`, `eval_lambda_function_name`, `models_bucket_name`, `eval_model_key`,
+`github_eval_deploy_role_arn`.
 
 (`api_custom_domain_url` / `site_custom_domain_url` are `null` until the
 domains are configured.)
@@ -72,4 +78,5 @@ Part of the Computer Shop project:
 
 - [computer-shop-backend](https://github.com/MartinSG98/computer-shop-backend) — FastAPI backend API
 - [computer_shop_ui](https://github.com/MartinSG98/computer_shop_ui) — React/Vite/Mantine frontend
+- [computer-shop-build-eval](https://github.com/MartinSG98/computer-shop-build-eval) — PC build scorer + suggestions (eval Lambda)
 - [tf-module-computer_shop](https://github.com/MartinSG98/tf-module-computer_shop) — Terraform infrastructure module
