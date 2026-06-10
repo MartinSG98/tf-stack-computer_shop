@@ -1,7 +1,7 @@
 module "computer_shop" {
-  # Local path during development. Switch to a pinned version when releasing:
-  #   source = "git::https://github.com/MartinSG98/tf-module-computer_shop.git?ref=v0.3.8"
-  source = "../tf-module-computer_shop"
+  # Pinned release. Switch to the local path during development:
+  #   source = "../tf-module-computer_shop"
+  source = "git::https://github.com/MartinSG98/tf-module-computer_shop.git?ref=v0.3.9"
 
   providers = {
     aws           = aws

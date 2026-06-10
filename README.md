@@ -16,13 +16,14 @@ module. This is where you run `plan` / `apply`.
 
 ## Module source
 
-During development the module is referenced by **local path**
-(`../tf-module-computer_shop`), so both repos must be checked out as siblings.
-To pin a released version, switch `main.tf` to the git source:
+The module is pinned to a **released version** via the git source:
 
 ```hcl
-source = "git::https://github.com/MartinSG98/tf-module-computer_shop.git?ref=v0.3.6"
+source = "git::https://github.com/MartinSG98/tf-module-computer_shop.git?ref=v0.3.9"
 ```
+
+During development, switch `main.tf` to the local path
+(`../tf-module-computer_shop`), with both repos checked out as siblings.
 
 ## Usage
 
