@@ -78,3 +78,28 @@ output "eval_url" {
   description = "Build-evaluator endpoint (POST)."
   value       = module.computer_shop.eval_url
 }
+
+output "agent_runtime_arn" {
+  description = "AgentCore runtime ARN of the support agent."
+  value       = module.computer_shop.agent_runtime_arn
+}
+
+output "agent_runtime_id" {
+  description = "AgentCore runtime id (target for the agent CI's update-agent-runtime)."
+  value       = module.computer_shop.agent_runtime_id
+}
+
+output "agent_artifacts_bucket_name" {
+  description = "S3 bucket the support-agent CI uploads the code zip to."
+  value       = module.computer_shop.agent_artifacts_bucket_name
+}
+
+output "agent_code_key" {
+  description = "S3 key of the support-agent code zip."
+  value       = module.computer_shop.agent_code_key
+}
+
+output "github_agent_deploy_role_arn" {
+  description = "IAM role ARN for the support-agent CI to assume via OIDC."
+  value       = module.computer_shop.github_agent_deploy_role_arn
+}

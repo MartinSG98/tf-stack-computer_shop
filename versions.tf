@@ -3,8 +3,9 @@ terraform {
 
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+      source = "hashicorp/aws"
+      # 6.21+ is needed for the AgentCore runtime (support agent) in the module.
+      version = "~> 6.21"
     }
   }
 
