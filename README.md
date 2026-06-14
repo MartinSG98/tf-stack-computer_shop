@@ -63,15 +63,26 @@ URLs (no domain resources created).
 
 ## Outputs
 
-`api_url`, `api_custom_domain_url`, `cdn_base_url`, table names,
-`images_bucket_name`, `frontend_bucket_name`, `frontend_url`,
-`site_custom_domain_url`, `frontend_distribution_id`, `lambda_function_name`,
-`github_deploy_role_arn`, `github_frontend_deploy_role_arn`,
+`api_url`, `api_custom_domain_url`, `cdn_base_url`, table names (incl.
+`orders_table_name`), `images_bucket_name`, `frontend_bucket_name`,
+`frontend_url`, `site_custom_domain_url`, `frontend_distribution_id`,
+`lambda_function_name`, `cognito_user_pool_id`, `cognito_app_client_id`,
+`cognito_region`, `github_deploy_role_arn`, `github_frontend_deploy_role_arn`,
 `eval_url`, `eval_lambda_function_name`, `models_bucket_name`, `eval_model_key`,
 `github_eval_deploy_role_arn`.
 
 (`api_custom_domain_url` / `site_custom_domain_url` are `null` until the
 domains are configured.)
+
+The three `cognito_*` outputs feed the frontend's auth config (user pool id, app
+client id, region).
+
+## Cost posture
+
+This deployment is tuned for a **~$0 AWS bill** (free-tier DynamoDB, Cognito Lite
+with no threat protection, no WAF, local state). The deliberate trade-offs, and
+what a real budget would change, are documented in the module README under
+"Cost posture (and what a budgeted setup would change)".
 
 ## Related
 
