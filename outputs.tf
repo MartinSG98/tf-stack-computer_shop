@@ -21,6 +21,25 @@ output "categories_table_name" {
   value = module.computer_shop.categories_table_name
 }
 
+output "orders_table_name" {
+  value = module.computer_shop.orders_table_name
+}
+
+output "cognito_user_pool_id" {
+  description = "Cognito user pool id (frontend auth config)."
+  value       = module.computer_shop.cognito_user_pool_id
+}
+
+output "cognito_app_client_id" {
+  description = "Cognito app client id used by the frontend SPA (also the JWT audience)."
+  value       = module.computer_shop.cognito_app_client_id
+}
+
+output "cognito_region" {
+  description = "Region the Cognito user pool lives in (frontend auth config)."
+  value       = module.computer_shop.cognito_region
+}
+
 output "images_bucket_name" {
   value = module.computer_shop.images_bucket_name
 }
